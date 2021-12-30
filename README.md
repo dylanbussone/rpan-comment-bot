@@ -1,6 +1,11 @@
 # rpan-comment-bot
 Reddit bot to find your newest submission and add comments to it.
 
+## Prerequisites
+```
+pip install praw
+```
+
 ## Usage
 First you will need to create the following environment variables for your Reddit OAuth2 credentials:
 ```
