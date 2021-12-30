@@ -20,13 +20,13 @@ reddit = praw.Reddit(
     password=os.environ['REDDIT_BOT_PASSWORD'],
 )
 
-new_posts = reddit.redditor("dylonious").submissions.new()
+new_posts = reddit.redditor(os.environ['REDDIT_BOT_USERNAME']).submissions.new()
 for post in new_posts:
     if not post.pinned:
         print(f'Found post: {post.title}\n{post.url}\n')
         message_index = 0
         while True:
-            print('Posting message...')
+            print('Posting message')
             post.reply(messages[message_index % len(messages)])
             message_index += 1
             time.sleep(timeout)
